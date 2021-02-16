@@ -25,8 +25,8 @@ countries = [{
 RAPID_API_SECRET_HOST = os.getenv("RAPID_API_SECRET_HOST")
 RAPID_API_SECRET_KEY = os.getenv("RAPID_API_SECRET_KEY")
 
-LOCAL_BTC_HMAC_KEY = '016f6074b8bdec33cc138a57366bdc85'
-LOCAL_BTC_HMAC_SECRET = '84c1b8ac986bc2adfc1aed8f7bd01e4eecf25eb5b2c0858d110b032b21e77f7d'
+LOCAL_BTC_HMAC_KEY = os.getenv("LOCAL_BTC_HMAC_KEY")
+LOCAL_BTC_HMAC_SECRET = os.getenv("LOCAL_BTC_HMAC_SECRET")
 
 url = "https://perodriguezl-cryptocurrency-real-time-v1.p.rapidapi.com/info/BTC"
 
