@@ -13,7 +13,7 @@ LOCAL_BTC_HMAC_SECRET= <<Localbitcoin.com Secrets>>
 ```
 
 RAPID API SECRETS from: 
-https://perodriguezl-cryptocurrency-real-time-v1.p.rapidapi.com
+https://rapidapi.com/perodriguezl/api/cryptocurrency-real-time-bitcoin-ethereum-ripple-stellar-litecoin
 
 
 ## Install Dependencies
