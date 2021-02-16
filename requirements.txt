@@ -1,0 +1,3 @@
+lbcapi
+cryptocomapi
+python-dotenv
