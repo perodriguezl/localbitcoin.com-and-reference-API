@@ -33,7 +33,7 @@ url = "https://perodriguezl-cryptocurrency-real-time-v1.p.rapidapi.com/info/BTC"
 headers = {
     'x-rapidapi-host': RAPID_API_SECRET_HOST,
     'x-rapidapi-key': RAPID_API_SECRET_KEY
-    }
+}
 
 response = requests.request("GET", url, headers=headers)
 
@@ -41,7 +41,7 @@ value = response.json()
 
 non_decimal = re.compile(r'[^\d.]+')
 
-my_score = 65
+my_score = 99
 
 
 def interate_over_ads(me_json):
@@ -87,26 +87,26 @@ def interate_over_ads(me_json):
         i = i + 1
     print(minimum)
 
-conn = api.hmac(LOCAL_BTC_HMAC_KEY, LOCAL_BTC_HMAC_SECRET)
+conn = api.Connection()
 
 print('by currency')
 print(currencies)
 
 for currency in currencies:
-    me_json = conn.call('GET', '/buy-bitcoins-online/{}/.json'.format(currency)).json()
+    me_json = requests.get('https://localbitcoins.com/buy-bitcoins-online/{}/.json'.format(currency)).json()
     interate_over_ads(me_json)
 
 print('by payment methods')
 print(payment_methods)
 
-payment_methods_list = conn.call('GET', '/api/payment_methods/').json()
+payment_methods_list = requests.get('https://localbitcoins.com/api/payment_methods/').json()
 
-countries_list = conn.call('GET', '/api/countrycodes/').json()
+countries_list = requests.get('https://localbitcoins.com/api/countrycodes/').json()
 
-currencies_list = conn.call('GET', '/api/currencies/').json()
+currencies_list = requests.get('https://localbitcoins.com/api/currencies/').json()
 
 for payment in payment_methods:
-    me_json = conn.call('GET', '/buy-bitcoins-online/{}/.json'.format(payment)).json()
+    me_json = requests.get('https://localbitcoins.com/buy-bitcoins-online/{}/.json'.format(payment)).json()
     interate_over_ads(me_json)
 
 print(countries)
